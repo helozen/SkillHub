@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'screens/auth/login_screen.dart';
+import 'screens/home/home_screen.dart';
+import 'screens/services/service_detail_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -120,6 +123,27 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+
+void main() {
+  runApp(SkillHubApp());
+}
+
+class SkillHubApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'SkillHub',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/home': (context) => HomeScreen(),
+        '/service-detail': (context) => ServiceDetailScreen(),
+      },
     );
   }
 }
