@@ -4,7 +4,23 @@ import 'screens/home/home_screen.dart';
 import 'screens/services/service_detail_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(SkillHubApp());
+}
+
+class SkillHubApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'SkillHub',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/home': (context) => HomeScreen(),
+        '/service-detail': (context) => ServiceDetailScreen(),
+      },
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -128,22 +144,4 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-void main() {
-  runApp(SkillHubApp());
-}
 
-class SkillHubApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'SkillHub',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: '/login',
-      routes: {
-        '/login': (context) => LoginScreen(),
-        '/home': (context) => HomeScreen(),
-        '/service-detail': (context) => ServiceDetailScreen(),
-      },
-    );
-  }
-}
